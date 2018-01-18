@@ -1,0 +1,109 @@
+JS V1
+
+1.
+ECMAScript var búin til til að standardizea Javascript og er í raun létt leið að skrifa C++
+
+2.
+Loosley Typed þíðir að það þarf ekki að tilgreina típu á breitur.
+
+3.
+Það er einginn alveru munur á milli þeirra fyrir utan að þau termenata ekki hvort annað, þannig að maður getur skrifað eitt inní hinu.
+
+4.
+Undefined þíðir að það er ekkert value en null er value sem þíðir ekkert value.
+
+5.
+=== er einfalt, == er flókinn. === gefur true ef var hefur sama value og type, en == þarf bara value tveggja var vera eins, það gerir þetta með göldrum
+
+Hér eru áhugaverðar leiðir sem == er skrítið
+
+'' == '0'           // false
+0 == ''             // true
+0 == '0'            // true
+
+false == 'false'    // false
+false == '0'        // true
+
+false == undefined  // false
+false == null       // false
+null == undefined   // true
+
+' \t\r\n ' == 0     // true
+
+=== gefur false við þessu öllu.
+=== er einfalt og rétt.
+
+6.
+let er local, var er global
+
+  console.log(a); // a is undefined due to hoisting
+  // console.log(b); // ReferenceError: b is not defined
+
+  for( var a = 0; a < 3; a++ ) {
+    console.log(a); // 0, 1, 2
+  };
+
+  console.log(a); // 3
+  // console.log(b); // ReferenceError: b is not defined
+
+  for( let b = 0; b < 3; b++ ) {
+    console.log(b);
+  };
+
+  console.log(a); // 3
+  // console.log(b); // ReferenceError: b is not defined
+
+7.
+Function declaration:
+
+function sayHi() {
+  alert( "Hello" );
+}
+
+Function Expression
+
+let sayHi = function() {
+  alert( "Hello" );
+};
+
+Arrow Function
+
+let sayHi = () => alert("Hello");
+
+8.
+"use strict"; bætir við auka error skilaboðum til að gera scriptið flottara í augum margra.
+
+9.
+Vegna þess að function declaration er lesin á undan öllu öðru. Ef þetta væri expression eins og sínt fyrir neðan virkar þetta ekki.
+
+Declaration
+x()
+let x = function() {
+	console.log('x');
+};
+
+Arrow
+x()
+let x = () => console.log('x');
+
+Hvorugt þeirra virkar.
+
+10.
+Þetta script gefur alert(8) vegna þess að þegar maður declairar function tvisvar yfir skrifar senna declaration firsta.
+
+11.
+Ef var er ekki skrifað á undan nafni þá mun það alftaf vera global variable en ef það er var mun það bara vera til inní sínu scope.
+
+12.
+Þetta gerir functionið nafn laust og self executing, það er ekki hægt að calla á það því það er einnnota.
+
+13.
+Scope segir hvar gefin breita getur verið notuð. Ef scope er global getur breitan verið notuð hvar sem er. Ef scope er local þá getur breitan bara verið notuð inní sínu scope. Function er scope til dæmis.
+
+14.
+Call stack er það sem er notað til að skipulegja öll function eða variable sem eru í notkun.
+
+
+
+
+
